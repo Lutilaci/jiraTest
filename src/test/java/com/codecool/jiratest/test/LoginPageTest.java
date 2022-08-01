@@ -1,5 +1,6 @@
 package com.codecool.jiratest.test;
 
+import com.codecool.jiratest.page.LoginPage;
 import com.codecool.jiratest.page.MainPage;
 import org.junit.jupiter.api.*;
 
@@ -14,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 public class LoginPageTest {
     private WebDriver driver;
-    private MainPage mainPage;
+    private LoginPage loginPage;
 
     @BeforeEach
     public void setUp() {
@@ -23,7 +24,7 @@ public class LoginPageTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.jetbrains.com/");
 
-        mainPage = new MainPage(driver);
+        loginPage = new LoginPage(driver);
     }
 
     @AfterEach
