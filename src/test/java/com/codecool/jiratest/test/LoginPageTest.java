@@ -1,5 +1,7 @@
-package com.codecool.jiratest;
+package com.codecool.jiratest.test;
 
+import com.codecool.jiratest.page.LoginPage;
+import com.codecool.jiratest.page.MainPage;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -8,13 +10,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import java.util.concurrent.TimeUnit;
 
-public class MainPageTest {
+public class LoginPageTest {
     private WebDriver driver;
-    private MainPage mainPage;
+    private LoginPage loginPage;
 
     @BeforeEach
     public void setUp() {
@@ -23,7 +24,7 @@ public class MainPageTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.jetbrains.com/");
 
-        mainPage = new MainPage(driver);
+        loginPage = new LoginPage(driver);
     }
 
     @AfterEach
@@ -34,7 +35,7 @@ public class MainPageTest {
 
     @Test
     public void navigationToAllTools() {
-        mainPage.seeAllToolsButton.click();
+//        loginPage.seeAllToolsButton.click();
 
         WebElement productsList = driver.findElement(By.id("products-page"));
         assertTrue(productsList.isDisplayed());

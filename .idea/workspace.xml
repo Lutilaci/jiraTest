@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="077735d6-f4ef-478c-8ed9-d886d55850fd" name="Changes" comment="LogOutDone">
       <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/LogOut.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/LogOutTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="077735d6-f4ef-478c-8ed9-d886d55850fd" name="Changes" comment="final starter kit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/page/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/page/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/test/LoginPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/test/LoginPageTest.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,8 +112,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659340931548</updated>
+
       <workItem from="1659340932830" duration="394000" />
       <workItem from="1659342507100" duration="7360000" />
+
+      <workItem from="1659340932830" duration="2431000" />
+
     </task>
     <task id="LOCAL-00001" summary="starter kit">
       <created>1659341223864</created>
@@ -116,7 +126,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659341223864</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="modify starter kit">
+      <created>1659341354034</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1659341354034</updated>
+    </task>
+    <task id="LOCAL-00003" summary="final starter kit">
+      <created>1659343780769</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1659343780769</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,5 +202,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+
+    <MESSAGE value="modify starter kit" />
+    <MESSAGE value="final starter kit" />
+    <option name="LAST_COMMIT_MESSAGE" value="final starter kit" />
+
   </component>
 </project>
