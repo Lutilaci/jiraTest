@@ -35,7 +35,7 @@ public class LoginPageTest {
 
     @Test
     public void navigationToAllTools() {
-        mainPage.seeAllToolsButton.click();
+//        loginPage.seeAllToolsButton.click();
 
         WebElement productsList = driver.findElement(By.id("products-page"));
         assertTrue(productsList.isDisplayed());
