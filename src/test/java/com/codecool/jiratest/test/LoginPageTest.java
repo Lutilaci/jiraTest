@@ -1,5 +1,6 @@
-package com.codecool.jiratest;
+package com.codecool.jiratest.test;
 
+import com.codecool.jiratest.page.MainPage;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -8,11 +9,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import java.util.concurrent.TimeUnit;
 
-public class MainPageTest {
+public class LoginPageTest {
     private WebDriver driver;
     private MainPage mainPage;
 
