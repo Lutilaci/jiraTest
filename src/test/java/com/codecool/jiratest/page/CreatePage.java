@@ -54,8 +54,7 @@ public class CreatePage {
     public By finalSubTaskDeleteButton = By.xpath("//input[@id='delete-issue-submit']");
     public By issueTypeSelectorButon = By.cssSelector("#issuetype-single-select > .icon");
     public By resultPageContent = By.cssSelector(".no-results > h2");
-
-
+    public By issueScrollDown = By.xpath("//ul[@class='aui-last']");
 
     public CreatePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
