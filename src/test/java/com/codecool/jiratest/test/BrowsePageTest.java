@@ -14,19 +14,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 public class BrowsePageTest {
+
     private WebDriver driver;
     private BrowsePage browsePage;
 
     public void login(){
         driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
-        driver.findElement(browsePage.username).sendKeys("automation24");
-        driver.findElement(browsePage.password).sendKeys("CCAutoTest19.");
-        driver.findElement(browsePage.loginButton).click();
+        browsePage.username.sendKeys("automation24");
+        browsePage.password.sendKeys("CCAutoTest19.");
+        browsePage.loginButton.click();
     }
 
     public void logout(){
-        driver.findElement(browsePage.profileAvatarButton).click();
-        driver.findElement(browsePage.logoutButton).click();
+        browsePage.profileAvatarButton.click();
+        browsePage.logoutButton.click();
     }
 
     @BeforeEach
@@ -50,7 +51,7 @@ public class BrowsePageTest {
     @Test
     public void browseProjects() {
         driver.get("https://jira-auto.codecool.metastage.net/secure/BrowseProjects.jspa");
-        String pageHeader = driver.findElement(browsePage.mainPAgeHeader).getText();
+        String pageHeader = driver.findElement(browsePage.mainPageHeader).getText();
         Assertions.assertEquals(pageHeader, "Browse projects");
     }
 
@@ -87,5 +88,78 @@ public class BrowsePageTest {
         driver.get("https://jira-auto.codecool.metastage.net/projects/SOMETHING/summary");
         String errorMessage = driver.findElement(browsePage.pageError).getText();
         Assertions.assertEquals(errorMessage, "You can't view this project");
+    }
+
+    @Test
+    public void browseIssues(){
+        driver.get("https://jira-auto.codecool.metastage.net/projects/MTP/issues/MTP-2020?filter=allopenissues");
+        String openIssues = driver.findElement(browsePage.subnavigatorTitle).getText();
+        Assertions.assertEquals(openIssues, "Open issues");
+        String header = driver.findElement(browsePage.browseIssueHeader).getText();
+        System.out.println(header);
+        Assertions.assertEquals(header, "Happy Path");
+    }
+
+    @Test
+    public void CheckTOUCANIssueWithID1(){
+        driver.get("https://jira-auto.codecool.metastage.net/browse/TOUCAN-1");
+        String issueID = driver.findElement(browsePage.issueLink).getText();
+        Assertions.assertEquals(issueID, "TOUCAN-1");
+    }
+
+    @Test
+    public void CheckTOUCANIssueWithID2(){
+        driver.get("https://jira-auto.codecool.metastage.net/browse/TOUCAN-2");
+        String issueID = driver.findElement(browsePage.issueLink).getText();
+        Assertions.assertEquals(issueID, "TOUCAN-2");
+    }
+
+    @Test
+    public void CheckTOUCANIssueWithID3(){
+        driver.get("https://jira-auto.codecool.metastage.net/browse/TOUCAN-3");
+        String issueID = driver.findElement(browsePage.issueLink).getText();
+        Assertions.assertEquals(issueID, "TOUCAN-3");
+    }
+
+    @Test
+    public void CheckJETIIssueWithID1(){
+        driver.get("https://jira-auto.codecool.metastage.net/browse/JETI-1");
+        String issueID = driver.findElement(browsePage.issueLink).getText();
+        Assertions.assertEquals(issueID, "JETI-1");
+    }
+
+    @Test
+    public void CheckJETIIssueWithID2(){
+        driver.get("https://jira-auto.codecool.metastage.net/browse/JETI-2");
+        String issueID = driver.findElement(browsePage.issueLink).getText();
+        Assertions.assertEquals(issueID, "JETI2");
+    }
+
+    @Test
+    public void CheckJETIIssueWithID3(){
+        driver.get("https://jira-auto.codecool.metastage.net/browse/JETI-3");
+        String issueID = driver.findElement(browsePage.issueLink).getText();
+        Assertions.assertEquals(issueID, "JETI-3");
+    }
+
+    @Test
+    public void CheckCOALAIssueWithID1(){
+        driver.get("https://jira-auto.codecool.metastage.net/browse/COALA-1");
+        String issueID = driver.findElement(browsePage.issueLink).getText();
+        Assertions.assertEquals(issueID, "COALA-1");
+    }
+
+    @Test
+    public void CheckCOALAIssueWithID2(){
+        driver.get("https://jira-auto.codecool.metastage.net/browse/COALA-2");
+        String issueID = driver.findElement(browsePage.issueLink).getText();
+        Assertions.assertEquals(issueID, "COALA-2");
+    }
+
+    @Test
+    public void CheckCOALAIssueWithID3(){
+        driver.get("https://jira-auto.codecool.metastage.net/browse/COALA-3");
+        String issueID = driver.findElement(browsePage.issueLink).getText();
+        Assertions.assertEquals(issueID, "COALA-3");
     }
 }
