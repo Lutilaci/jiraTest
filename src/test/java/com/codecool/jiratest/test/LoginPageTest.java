@@ -1,17 +1,10 @@
 package com.codecool.jiratest.test;
 
 import com.codecool.jiratest.page.LoginPage;
-import com.codecool.jiratest.page.MainPage;
 import org.junit.jupiter.api.*;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.concurrent.TimeUnit;
 
 public class LoginPageTest {
     private WebDriver driver;
@@ -21,9 +14,7 @@ public class LoginPageTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://www.jetbrains.com/");
-
+        driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
         loginPage = new LoginPage(driver);
     }
 
@@ -32,13 +23,61 @@ public class LoginPageTest {
         driver.quit();
     }
 
+    @Test
+    public void LoginSuccessful(){
+
+        loginPage.usernameField.sendKeys("automation22");
+        loginPage.passwordField.sendKeys("CCAutoTest19.");
+        loginPage.logInButton.click();
+        loginPage.profilePicture.click();
+        loginPage.profileButton.click();
+        Assertions.assertEquals("Auto Tester 22", loginPage.profileName.getText());
+    }
 
     @Test
-    public void navigationToAllTools() {
-//        loginPage.seeAllToolsButton.click();
+    public void LoginUnregistered(){
 
-        WebElement productsList = driver.findElement(By.id("products-page"));
-        assertTrue(productsList.isDisplayed());
-        assertEquals("All Developer Tools and Products by JetBrains", driver.getTitle());
+        loginPage.usernameField.sendKeys("edontcar1234381");
+        loginPage.passwordField.sendKeys("DontCare");
+        loginPage.logInButton.click();
+        Assertions.assertEquals("Sorry, your username and password are incorrect - please try again.",
+                loginPage.logInErrorMessage.getText());
+    }
+
+    @Test
+    public void LogInWrongPassword(){
+
+        loginPage.usernameField.sendKeys("automation22");
+        loginPage.passwordField.sendKeys("wrongPW");
+        loginPage.logInButton.click();
+        ValidateWrongLogin();
+        RestoreLogin();
+    }
+
+    @Test
+    public void EmptyPassword(){
+
+        loginPage.usernameField.sendKeys("automation22");
+        loginPage.logInButton.click();
+        ValidateWrongLogin();
+        RestoreLogin();
+    }
+
+    @Test
+    public void EmptyData(){
+        loginPage.logInButton.click();
+        ValidateWrongLogin();
+    }
+
+    private void ValidateWrongLogin(){
+        Assertions.assertEquals("Sorry, your username and password are incorrect - please try again.",
+                loginPage.logInErrorMessage.getText());
+        Assertions.assertEquals("Log In", driver.findElement(By.id("user-options")).getText());
+    }
+
+    private void RestoreLogin(){
+        loginPage.usernameField.sendKeys("automation22");
+        loginPage.passwordField.sendKeys("CCAutoTest19.");
+        loginPage.logInButton.click();
     }
 }
