@@ -11,25 +11,13 @@ public class CreatePage {
     @FindBy (css = "#create_link")
     public WebElement mainCreateButton;
 
-    @FindBy (xpath = "//div[@id='project-single-select']/span")
-    public WebElement projectSelector;
-
-    @FindBy (xpath = "//a[contains(text(),'Main Testing Project (MTP)')]")
-    public WebElement selectMTPProject;
-
-    @FindBy (id = "project-field")
+    @FindBy (xpath = "//input[@id='project-field']")
     public WebElement projectField;
 
-    @FindBy (xpath = "//input[@id='issuetype-field']")
+    @FindBy (id ="issuetype-field")
     public WebElement issueTypeSelector;
 
-    @FindBy (xpath = "//div[@id='project-options']")
-    public WebElement projectOptions;
-
-    @FindBy (xpath = "//a[contains(text(),'Story')]")
-    public WebElement storyIssueTypeSelector;
-
-    @FindBy (css = "#summary")
+    @FindBy (id= "summary")
     public WebElement summaryField;
 
     @FindBy (css = "#create-issue-submit")
@@ -38,18 +26,36 @@ public class CreatePage {
     @FindBy (css = ".aui-message")
     public WebElement popupMessage;
 
+    @FindBy (xpath = "//a[@class='issue-created-key']")
+    public WebElement issueCreatedPopup;
+
     @FindBy (xpath = "//a[contains(text(),'Issues')]")
     public WebElement issuesButton;
+
+    @FindBy (xpath="//h1[@id='summary-val']")
+    public WebElement issueHeader;
+
+    @FindBy (xpath = "//aui-item-link[@id='create-subtask']/a/span")
+    public WebElement createSubClass;
+
 
     public By searchForIssuesButton = By.cssSelector("#issues_new_search_link_lnk");
     public By searchForIssueField = By.cssSelector("#searcher-query");
     public By searchButton = By.xpath("(//button[@type='button'])[3]");
-    public By issueHeader = By.xpath("//h1[@id='summary-val']");
     public By moreOptionButton = By.cssSelector("#opsbar-operations_more");
     public By deleteButton = By.cssSelector("#delete-issue .trigger-label");
     public By finalDeleteButton = By.cssSelector("#delete-issue-submit");
     public By createIssueErrorMessage = By.cssSelector(".error");
     public By cancelButton = By.xpath("//button[contains(.,'Cancel')]");
+    public By moreButton = By.xpath("//a[@id='opsbar-operations_more']");
+    public By subTaskName = By.cssSelector(".stsummary > .issue-link");
+    public By actionButton = By.xpath("//span[contains(.,'Actions')]");
+    public By deleteSubTaskButton = By.xpath("//a[contains(text(),'Delete')]");
+    public By finalSubTaskDeleteButton = By.xpath("//input[@id='delete-issue-submit']");
+    public By issueTypeSelectorButon = By.cssSelector("#issuetype-single-select > .icon");
+    public By resultPageContent = By.cssSelector(".no-results > h2");
+
+
 
     public CreatePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
