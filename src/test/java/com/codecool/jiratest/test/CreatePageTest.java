@@ -2,7 +2,7 @@ package com.codecool.jiratest.test;
 
 import com.codecool.jiratest.page.BrowsePage;
 import com.codecool.jiratest.page.CreatePage;
-import org.json.JSONObject;
+//import org.json.JSONObject;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

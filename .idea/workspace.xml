@@ -4,18 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
     <list default="true" id="077735d6-f4ef-478c-8ed9-d886d55850fd" name="Changes" comment="LogOutDone">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/LogOut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/LogOutTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/082416c2-5a5e-431c-9858-234a5aa97b99-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/0ee3293c-7824-4617-ac79-fbb0525d5c2d-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/10e220bd-0962-4d3e-ad97-09ee7c1fe6f9-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/11f923ee-b1ba-4763-991b-9de9f67ab267-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/1e579694-bc60-4dd9-a110-d24060e2de85-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/27a1533c-af32-417c-9fc5-20336a5e5b1e-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/27a44883-e438-4339-a07a-7eac44528861-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/31381c06-2311-43b7-b6fd-445e98759ba5-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/37e1b5c0-d321-4f61-be7b-1d01d6e781c1-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/3f59c1db-8e2c-4b98-be2f-207d66c5605c-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/3fff6c26-bb5d-4df8-9128-d415727e5c54-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/41f18d00-22f7-4b20-8e8b-25b1603130b4-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/4222142a-4718-4b72-9f43-4907948d3831-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/427c24e9-2cf1-4c06-ac2c-304882022062-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/545e85f3-5638-4f5b-b992-0abd1c53b955-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/57fb3d40-8e1e-4b6f-a917-bfcc8599323f-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/59d428eb-74b1-46bc-805c-21ff2e1730b3-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/6925e4c6-f8ac-4d1d-a58b-08475bc9f173-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/6ffa71f2-4c33-4109-840e-ffc939e7bcf8-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/739894d0-f289-4d4c-91b2-ad69a280f794-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/78a824ea-e860-47ae-afea-5220be46a434-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/7cd1058c-de39-4f5c-b521-188b12adbe53-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/7ceb2306-4c71-4fed-ab81-ab9301f1d64d-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/85269c99-7103-4e78-984a-9493007cfb18-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/8a1443f0-5f1e-48d4-9628-8fa0bd1284db-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/8cd5d8ea-c63d-4cda-b0d8-ba097897090e-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/921fdc16-50b9-4596-9b6e-17e82b442ea8-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/95003b8c-fdcd-4046-8932-c43fd936926a-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/a5cd9d39-1967-47d7-be38-4ac1667a6ce6-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/b6153e39-11b5-4223-bdbc-ec32f2d53fe4-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/bac3f913-deb1-42f0-a227-3811e84eb9da-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/c311b86b-470e-44bd-939b-9aff0731d6cd-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/c7b38c5c-3973-4fb8-a90c-9eff15c0995e-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/cbbcc91f-cc19-47c5-a186-f86beaf52bad-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/d1567ed0-cf40-4efb-a6d7-7f5167abb2e6-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/d1767e9d-fd05-49fe-affe-36d4e497ae37-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/d3a3ad48-790f-4ca7-aaa6-1b610d9bff82-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/dbb16243-100b-447a-b96a-8b8c8df40cd4-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/dd84d3ed-1efa-4b27-9acc-249dd6c533fa-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/e0bc1511-f001-4201-9932-71b6b5ede7ec-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/e2bdbfba-702a-4e41-9c16-738eeb24783a-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/e55f9f77-18ff-491c-8d18-9b73fa985e4b-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/e6990c76-64bc-45d7-bff9-3e3afe081f83-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/fa945c7a-c7db-4477-88ef-1dbaee2ca62e-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/fc8e2dd9-a78d-4104-a3e1-d31219253a0e-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Captcha/Captcha.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Captcha/CaptchaTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Captcha/chromedriver.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/LogOut/chromedriver.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/page/CaptchaPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/test/CaptchaTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/test/IssueTypesDropDownTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    <list default="true" id="077735d6-f4ef-478c-8ed9-d886d55850fd" name="Changes" comment="final starter kit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/page/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/page/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/test/LoginPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/test/LoginPageTest.java" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/LogOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LogOut/LogOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/LogOutTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LogOut/LogOutTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/test/CreatePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codecool/jiratest/test/CreatePageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,58 +85,116 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2CkK1c4HL69z9KcxPEhcWIOC6lh" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.LogOutTest.SuccessfulLogOut">
-    <configuration name="LogOutTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+}</component>
+  <component name="RunManager" selected="JUnit.IssueTypesDropDownTest.CheckPermissionAccess">
+    <configuration name="IssueTypesDropDownTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jiraTest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.codecool.jiratest.*" />
+          <option name="PATTERN" value="com.codecool.jiratest.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.codecool.jiratest" />
-      <option name="MAIN_CLASS_NAME" value="com.codecool.jiratest.LogOutTest" />
+      <option name="PACKAGE_NAME" value="com.codecool.jiratest.test" />
+      <option name="MAIN_CLASS_NAME" value="com.codecool.jiratest.test.IssueTypesDropDownTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LogOutTest.SuccessfulLogOut" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IssueTypesDropDownTest.AviableIssues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jiraTest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.codecool.jiratest.*" />
+          <option name="PATTERN" value="com.codecool.jiratest.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.codecool.jiratest" />
-      <option name="MAIN_CLASS_NAME" value="com.codecool.jiratest.LogOutTest" />
-      <option name="METHOD_NAME" value="SuccessfulLogOut" />
+      <option name="PACKAGE_NAME" value="com.codecool.jiratest.test" />
+      <option name="MAIN_CLASS_NAME" value="com.codecool.jiratest.test.IssueTypesDropDownTest" />
+      <option name="METHOD_NAME" value="AviableIssues" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IssueTypesDropDownTest.AviableIssuesInDropDown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jiraTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.codecool.jiratest.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.codecool.jiratest.test" />
+      <option name="MAIN_CLASS_NAME" value="com.codecool.jiratest.test.IssueTypesDropDownTest" />
+      <option name="METHOD_NAME" value="AviableIssuesInDropDown" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IssueTypesDropDownTest.CheckPermissionAccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jiraTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.codecool.jiratest.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.codecool.jiratest.test" />
+      <option name="MAIN_CLASS_NAME" value="com.codecool.jiratest.test.IssueTypesDropDownTest" />
+      <option name="METHOD_NAME" value="CheckPermissionAccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IssueTypesDropDownTest.IssueTypesCheckWithDropDown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jiraTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.codecool.jiratest.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.codecool.jiratest.test" />
+      <option name="MAIN_CLASS_NAME" value="com.codecool.jiratest.test.IssueTypesDropDownTest" />
+      <option name="METHOD_NAME" value="IssueTypesCheckWithDropDown" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -99,8 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LogOutTest.SuccessfulLogOut" />
-        <item itemvalue="JUnit.LogOutTest" />
+        <item itemvalue="JUnit.IssueTypesDropDownTest.CheckPermissionAccess" />
+        <item itemvalue="JUnit.IssueTypesDropDownTest.AviableIssuesInDropDown" />
+        <item itemvalue="JUnit.IssueTypesDropDownTest.AviableIssues" />
+        <item itemvalue="JUnit.IssueTypesDropDownTest.IssueTypesCheckWithDropDown" />
+        <item itemvalue="JUnit.IssueTypesDropDownTest" />
       </list>
     </recent_temporary>
   </component>
@@ -112,12 +218,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659340931548</updated>
-
       <workItem from="1659340932830" duration="394000" />
       <workItem from="1659342507100" duration="7360000" />
-
       <workItem from="1659340932830" duration="2431000" />
-
+      <workItem from="1659424630316" duration="17003000" />
     </task>
     <task id="LOCAL-00001" summary="starter kit">
       <created>1659341223864</created>
@@ -158,6 +262,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="starter kit" />
     <MESSAGE value="LogOutDone" />
     <option name="LAST_COMMIT_MESSAGE" value="LogOutDone" />
@@ -166,46 +271,80 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/codecool/jiratest/LogOut.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/LogOut/LogOut.java</url>
           <line>29</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/codecool/jiratest/LogOut.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/LogOut/LogOut.java</url>
           <line>30</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/codecool/jiratest/LogOut.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/LogOut/LogOut.java</url>
           <line>31</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/codecool/jiratest/LogOut.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/LogOut/LogOut.java</url>
           <line>32</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/codecool/jiratest/LogOut.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/LogOut/LogOut.java</url>
           <line>27</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/codecool/jiratest/LogOut.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/LogOut/LogOut.java</url>
           <line>26</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/codecool/jiratest/LogOut.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/LogOut/LogOut.java</url>
           <line>20</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Captcha/CaptchaTests.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Captcha/CaptchaTests.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Captcha/CaptchaTests.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Captcha/CaptchaTests.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Captcha/CaptchaTests.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Captcha/CaptchaTests.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/codecool/jiratest/test/IssueTypesDropDownTest.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="16" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-
-    <MESSAGE value="modify starter kit" />
-    <MESSAGE value="final starter kit" />
-    <option name="LAST_COMMIT_MESSAGE" value="final starter kit" />
-
   </component>
 </project>
