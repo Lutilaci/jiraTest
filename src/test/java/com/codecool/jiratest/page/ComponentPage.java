@@ -22,6 +22,15 @@ public class ComponentPage {
     @FindBy (css = ".aui-message")
     public WebElement popupMessage;
 
+    @FindBy (xpath = "//*[@id=\"components-val\"]")
+    public WebElement componentText;
+
+    @FindBy (xpath = "//*[@id=\"aui-uid-1\"]")
+    public WebElement componentButton;
+
+    @FindBy (xpath = "//*[@id=\"components-table\"]/tbody")
+    public WebElement componentTableBody;
+
     public ComponentPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
