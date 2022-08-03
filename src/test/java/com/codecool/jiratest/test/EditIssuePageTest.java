@@ -84,6 +84,4 @@ public class EditIssuePageTest {
         driver.switchTo().alert().accept();
         Assertions.assertEquals("Happy Path",editIssue.summaryValue.getText());
     }
-
-
 }

@@ -26,7 +26,6 @@ public class GlassVersionPageTest {
     private EditIssuePage editIssuePage;
     private WebDriverWait wait;
 
-
     @BeforeEach
     public void setUp(){
         driver = new ChromeDriver();
@@ -71,7 +70,6 @@ public class GlassVersionPageTest {
         wait.until(ExpectedConditions.elementToBeClickable(
                 editIssuePage.fixVersionDelete)).click();
         editIssuePage.updateButton.click();
-
     }
 
     @Test
@@ -98,5 +96,4 @@ public class GlassVersionPageTest {
                 driver.findElement(By.cssSelector("#versions-table > tbody.items.ui-sortable > tr > td.dynamic-table__actions > div > a > span")))).click();
         driver.findElement(By.linkText("Unrelease")).click();
     }
-
 }

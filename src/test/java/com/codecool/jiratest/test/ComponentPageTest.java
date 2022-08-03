@@ -21,15 +21,9 @@ import java.util.concurrent.TimeUnit;
 import static com.codecool.jiratest.utility.LogIn.logIn;
 
 public class ComponentPageTest {
-
     private WebDriver driver;
     private ComponentPage componentPage;
     private BrowsePage browsePage;
-
-    public void logout() {
-        browsePage.profileAvatarButton.click();
-        browsePage.logoutButton.click();
-    }
 
     @BeforeEach
     public void setUp() {
@@ -48,7 +42,6 @@ public class ComponentPageTest {
         logout();
         driver.quit();
     }
-
 
     @Test
     public void createComponents() {
@@ -90,5 +83,10 @@ public class ComponentPageTest {
         componentPage.popupMessage.isDisplayed();
         String popupMessage2 = componentPage.popupMessage.getText();
         Assertions.assertEquals(popupMessage2, "PP-400 has been updated.");
+    }
+
+    public void logout() {
+        browsePage.profileAvatarButton.click();
+        browsePage.logoutButton.click();
     }
 }

@@ -8,15 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
 public class BrowsePageTest {
-
     private WebDriver driver;
     private BrowsePage browsePage;
-
-
-    public void logout(){
-        browsePage.profileAvatarButton.click();
-        browsePage.logoutButton.click();
-    }
 
     @BeforeEach
     public void setUp() {
@@ -26,9 +19,6 @@ public class BrowsePageTest {
         browsePage = new BrowsePage(driver);
         driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
         logIn(driver);
-
-
-
     }
 
     @AfterEach
@@ -36,7 +26,6 @@ public class BrowsePageTest {
         logout();
         driver.quit();
     }
-
 
     @Test
     public void browseProjects() {
@@ -151,5 +140,10 @@ public class BrowsePageTest {
         driver.get("https://jira-auto.codecool.metastage.net/browse/COALA-3");
         String issueID = driver.findElement(browsePage.issueLink).getText();
         Assertions.assertEquals(issueID, "COALA-3");
+    }
+
+    public void logout(){
+        browsePage.profileAvatarButton.click();
+        browsePage.logoutButton.click();
     }
 }

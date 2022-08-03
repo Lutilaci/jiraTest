@@ -20,14 +20,12 @@ public class EditIssuesProjectTest {
     private LoginPage loginPage;
     private WebDriverWait wait;
 
-
     @BeforeEach
     public void setUp(){
         driver = new ChromeDriver();
         editIssue = new EditIssuePage(driver);
         loginPage = new LoginPage(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-
     }
 
     @AfterEach
@@ -76,5 +74,4 @@ public class EditIssuesProjectTest {
         wait.until(ExpectedConditions.elementToBeClickable(
                 editIssue.editButton)).isDisplayed();
     }
-
 }
