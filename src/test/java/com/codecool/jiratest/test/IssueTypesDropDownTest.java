@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class IssueTypesDropDownTest {
     private BrowsePage browsePage;
@@ -50,7 +51,7 @@ public class IssueTypesDropDownTest {
     public void AviableIssues() {
         c.driver.get("https://jira-auto.codecool.metastage.net/plugins/servlet/project-config/PP/summary");
 
-        assertEquals(c.driver.findElements(By.xpath("(//a[contains(text(),'Bug')])[2]")).isEmpty(), false);
+        assertFalse(c.driver.findElements(By.xpath("(//a[contains(text(),'Bug')])[2]")).isEmpty());
         assertEquals(c.driver.findElements(By.xpath("(//a[contains(text(),'Epic')])[2]")).isEmpty(), false);
         assertEquals(c.driver.findElements(By.xpath("(//a[contains(text(),'Story')])[2]")).isEmpty(), false);
         assertEquals(c.driver.findElements(By.xpath("(//a[contains(text(),'Sub-task')])[2]")).isEmpty(), false);
@@ -58,7 +59,7 @@ public class IssueTypesDropDownTest {
     }
 
     @Test
-    public void AviableIssuesInDropDown() throws InterruptedException {
+    public void AviableIssuesInDropDown() {
         c.driver.get("https://jira-auto.codecool.metastage.net/projects/PP?selectedItem=com.codecanvas.glass:glass");
 
         c.driver.findElement(By.xpath("//li[@id='glass-workflow-nav']/a/div")).click();
@@ -73,12 +74,27 @@ public class IssueTypesDropDownTest {
     {
         c.driver.get("https://jira-auto.codecool.metastage.net/projects/PP?selectedItem=com.codecanvas.glass:glass");
         c.driver.findElement(By.xpath("//a[contains(.,'Permissions')]")).click();
+
         assertEquals(c.driver.findElements(By.cssSelector("#glass-permissions-matrix-panel .permtr:nth-child(5) > .td-icon:nth-child(3) > .glass-true-icon")).isEmpty(), false);
         c.driver.findElement(By.xpath("//a[contains(text(),'View by Permissions')]")).click();
+
         assertEquals(c.driver.findElements(By.xpath("//li[contains(.,'Application Access: Any logged in user')]")).isEmpty(), false);
         c.driver.findElement(By.xpath("//a[contains(.,'View by Actors')]")).click();
+
         assertEquals(c.driver.findElements(By.xpath("//li[contains(.,'Application Access: Any logged in user')]")).isEmpty(), false);
-        //a[contains(.,'View by Actors')]
+        assertEquals(c.driver.findElements(By.xpath("//div[@id='glass-permissions-actorview-panel']/div/table/tbody/tr[2]/td[2]")).get(0).getText().contains("Browse Projects"), true);
+
     }
 
+    @Test
+    public void CheckPermissionAccessWithGlassCompare() throws InterruptedException {
+        c.driver.get("https://jira-auto.codecool.metastage.net/plugins/servlet/project-config/PP/permissions");
+
+        assertEquals(c.driver.findElements(By.cssSelector(".permissions-group:nth-child(1) tr:nth-child(2) dd")).get(0).getText().contains("Any logged in user"), true);
+        c.driver.findElement(By.xpath("//span[contains(.,'Glass Documentation')]")).click();
+        c.driver.findElement(By.xpath("//a[contains(text(),'Permissions')]")).click();
+
+        assertEquals(c.driver.findElements(By.cssSelector("#glass-permissions-matrix-panel .permtr:nth-child(5) > .td-icon:nth-child(3) > .glass-true-icon")).isEmpty(), false);
+        //assertEquals(c.driver.findElements(By.cssSelector("#glass-permissions-matrix-panel .permtr:nth-child(2) > .td-icon:nth-child(3) > .glass-true-icon")).isEmpty(), false);
+    }
 }
