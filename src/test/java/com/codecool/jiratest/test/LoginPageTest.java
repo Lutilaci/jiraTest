@@ -9,6 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class LoginPageTest {
     private WebDriver driver;
     private LoginPage loginPage;
+    private String username = "automation";
+    private String keyCode = "22";
 
     @BeforeEach
     public void setUp() {
@@ -26,12 +28,12 @@ public class LoginPageTest {
     @Test
     public void LoginSuccessful(){
 
-        loginPage.usernameField.sendKeys("automation22");
+        loginPage.usernameField.sendKeys(username+keyCode);
         loginPage.passwordField.sendKeys("CCAutoTest19.");
         loginPage.logInButton.click();
         loginPage.profilePicture.click();
         loginPage.profileButton.click();
-        Assertions.assertEquals("Auto Tester 22", loginPage.profileName.getText());
+        Assertions.assertEquals("Auto Tester "+keyCode, loginPage.profileName.getText());
     }
 
     @Test
@@ -47,7 +49,7 @@ public class LoginPageTest {
     @Test
     public void LogInWrongPassword(){
 
-        loginPage.usernameField.sendKeys("automation22");
+        loginPage.usernameField.sendKeys(username+keyCode);
         loginPage.passwordField.sendKeys("wrongPW");
         loginPage.logInButton.click();
         ValidateWrongLogin();
@@ -57,7 +59,7 @@ public class LoginPageTest {
     @Test
     public void EmptyPassword(){
 
-        loginPage.usernameField.sendKeys("automation22");
+        loginPage.usernameField.sendKeys(username+keyCode);
         loginPage.logInButton.click();
         ValidateWrongLogin();
         RestoreLogin();
@@ -76,7 +78,7 @@ public class LoginPageTest {
     }
 
     private void RestoreLogin(){
-        loginPage.usernameField.sendKeys("automation22");
+        loginPage.usernameField.sendKeys(username+keyCode);
         loginPage.passwordField.sendKeys("CCAutoTest19.");
         loginPage.logInButton.click();
     }

@@ -25,7 +25,7 @@ public class EditIssuePage {
     @FindBy(id = "edit-issue-submit")
     public WebElement updateButton;
 
-    @FindBy(css = ".aui-nav-selected:nth-child(2) > .aui-button")
+    @FindBy(css = "#description-wiki-edit > nav > div > div > ul > li.aui-nav-selected > button")
     public WebElement switchTextMode;
 
     @FindBy(css = ".aui-button-link:nth-child(3)")
