@@ -50,16 +50,14 @@ public class CaptchaTest {
     }
 
     @Test
-    public void CaptchaLogInWrongCaptcha() {
+    public void CaptchaLogInWrongCaptcha() throws InterruptedException {
 
         for (int i = 0; i<3; i++)
         {
             logInWithPass("CCAaa.");
         }
 
-        c.driver.findElement(By.id("login-form-os-captcha")).sendKeys("CC22.");
         logInWithPass("CCAutoTest19.");
-
         assertEquals(c.driver.findElements(By.xpath("//div[@id='captcha']/div/img")).isEmpty(), false);
     }
 

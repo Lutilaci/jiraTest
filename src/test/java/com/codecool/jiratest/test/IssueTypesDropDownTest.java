@@ -31,9 +31,7 @@ public class IssueTypesDropDownTest {
     public void setUp() throws IOException {
         c = new CaptchaPage();
         c.driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
-        c.driver.findElement(By.id("login-form-username")).sendKeys("automation22");
-        c.driver.findElement(By.id("login-form-password")).sendKeys("CCAutoTest19.");
-        c.driver.findElement(By.id("login-form-submit")).click();
+        login();
         c.driver.manage().window().maximize();
     }
 

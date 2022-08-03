@@ -27,8 +27,6 @@ public static ChromeDriverService service;
                 .build();
         service.start();
         driver = new RemoteWebDriver(service.getUrl(), new ChromeOptions());
-        //Mazimize current window
-        driver.manage().window().maximize();
 
     }
 }
