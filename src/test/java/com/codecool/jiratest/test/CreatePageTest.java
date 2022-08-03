@@ -9,7 +9,9 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -21,7 +23,7 @@ public class CreatePageTest {
 
     public void login(){
         driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
-        browsePage.username.sendKeys("automation24");
+        browsePage.username.sendKeys("automation23");
         browsePage.password.sendKeys("CCAutoTest19.");
         browsePage.loginButton.click();
     }
@@ -32,12 +34,22 @@ public class CreatePageTest {
     }
 
     public void clearProjectField(){
-        createPage.projectField.sendKeys(Keys.CONTROL + "a");
+        String os = System.getProperty("os.name");
+        if (os.equals("Mac OS X")){
+           createPage.projectField.sendKeys(Keys.COMMAND + "a");
+        }else{
+            createPage.projectField.sendKeys(Keys.CONTROL + "a");
+        }
         createPage.projectField.sendKeys(Keys.DELETE);
     }
 
     public void clearIssueType(){
-        createPage.issueTypeSelector.sendKeys(Keys.CONTROL + "a");
+        String os = System.getProperty("os.name");
+        if (os.equals("Mac OS X")){
+            createPage.issueTypeSelector.sendKeys(Keys.COMMAND + "a");
+        }else{
+            createPage.issueTypeSelector.sendKeys(Keys.CONTROL + "a");
+        }
         createPage.issueTypeSelector.sendKeys(Keys.DELETE);
     }
 
@@ -45,7 +57,7 @@ public class CreatePageTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
         browsePage = new BrowsePage(driver);
         createPage = new CreatePage(driver);
@@ -55,7 +67,6 @@ public class CreatePageTest {
 
     @AfterEach
     public void tearDown() {
-        logout();
         driver.quit();
     }
 
@@ -143,13 +154,12 @@ public class CreatePageTest {
         createPage.summaryField.sendKeys("Happy Path");
         createPage.createIssueButton.click();
         createPage.popupMessage.isDisplayed();
-        createPage.issuesButton.click();
-        driver.findElement(createPage.searchForIssuesButton).click();
-        driver.findElement(createPage.searchForIssueField).sendKeys("Happy Path");
-        driver.findElement(createPage.searchButton).click();
+
+        Thread.sleep(500);
+        driver.findElement(By.partialLinkText("Happy Path")).click();
         String issueName = createPage.issueHeader.getText();
-        Assertions.assertEquals(issueName, "Happy Path");
-//
+        Assertions.assertEquals("Happy Path", issueName);
+
         // Restore
         driver.findElement(createPage.moreOptionButton).click();
         driver.findElement(createPage.deleteButton).click();
@@ -218,7 +228,7 @@ public class CreatePageTest {
         }
 
         driver.findElement(createPage.cancelButton).click();
-        Assertions.assertEquals(issueTypes, supposedToBe);
+        Assertions.assertEquals(supposedToBe, issueTypes);
     }
 
     // I don't have permission to create TOUCAN project

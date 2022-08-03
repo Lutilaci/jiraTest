@@ -32,7 +32,7 @@ public class CreatePage {
     @FindBy (xpath = "//a[contains(text(),'Issues')]")
     public WebElement issuesButton;
 
-    @FindBy (xpath="//h1[@id='summary-val']")
+    @FindBy (id="summary-val")
     public WebElement issueHeader;
 
     @FindBy (xpath = "//aui-item-link[@id='create-subtask']/a/span")
