@@ -22,9 +22,9 @@ public class IssueTypesDropDownTest {
 
     public void login(){
         driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
-        browsePage.username.sendKeys("automation24");
-        browsePage.password.sendKeys("CCAutoTest19.");
-        browsePage.loginButton.click();
+        driver.findElement(By.id("login-form-username")).sendKeys("automation24");
+        driver.findElement(By.id("login-form-password")).sendKeys("CCAutoTest19.");
+        driver.findElement(By.id("login-form-submit")).click();
     }
 
     @BeforeEach
@@ -96,3 +96,4 @@ public class IssueTypesDropDownTest {
         //assertEquals(c.driver.findElements(By.cssSelector("#glass-permissions-matrix-panel .permtr:nth-child(2) > .td-icon:nth-child(3) > .glass-true-icon")).isEmpty(), false);
     }
 }
+
