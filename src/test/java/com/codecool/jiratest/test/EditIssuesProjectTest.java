@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static com.codecool.jiratest.utility.LogIn.logIn;
+
 public class EditIssuesProjectTest {
     private WebDriver driver;
     private EditIssuePage editIssue;
@@ -36,7 +38,7 @@ public class EditIssuesProjectTest {
     @Test
     public void toucansEditableTest(){
         driver.get("https://jira-auto.codecool.metastage.net/projects/TOUCAN/issues/TOUCAN-1");
-        logIn();
+        logIn(driver);
         wait.until(ExpectedConditions.elementToBeClickable(
                 editIssue.editButton)).isDisplayed();
         driver.get("https://jira-auto.codecool.metastage.net/projects/TOUCAN/issues/TOUCAN-2");
@@ -50,7 +52,7 @@ public class EditIssuesProjectTest {
     @Test
     public void koalasEditableTest(){
         driver.get("https://jira-auto.codecool.metastage.net/projects/COALA/issues/COALA-1");
-        logIn();
+        logIn(driver);
         wait.until(ExpectedConditions.elementToBeClickable(
                 editIssue.editButton)).isDisplayed();
         driver.get("https://jira-auto.codecool.metastage.net/projects/COALA/issues/COALA-2");
@@ -64,7 +66,7 @@ public class EditIssuesProjectTest {
     @Test
     public void jetisEditableTest(){
         driver.get("https://jira-auto.codecool.metastage.net/projects/JETI/issues/JETI-1");
-        logIn();
+        logIn(driver);
         wait.until(ExpectedConditions.elementToBeClickable(
                 editIssue.editButton)).isDisplayed();
         driver.get("https://jira-auto.codecool.metastage.net/projects/JETI/issues/JETI-2");
@@ -75,10 +77,4 @@ public class EditIssuesProjectTest {
                 editIssue.editButton)).isDisplayed();
     }
 
-
-    private void logIn(){
-        loginPage.usernameField.sendKeys("automation23");
-        loginPage.passwordField.sendKeys("CCAutoTest19.");
-        loginPage.logInButton.click();
-    }
 }

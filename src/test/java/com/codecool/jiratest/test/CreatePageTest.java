@@ -15,43 +15,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static com.codecool.jiratest.utility.LogIn.logIn;
+
 public class CreatePageTest {
 
     private WebDriver driver;
     private CreatePage createPage;
     private BrowsePage browsePage;
-
-    public void login(){
-        driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
-        browsePage.username.sendKeys("automation23");
-        browsePage.password.sendKeys("CCAutoTest19.");
-        browsePage.loginButton.click();
-    }
-
-    public void logout(){
-        browsePage.profileAvatarButton.click();
-        browsePage.logoutButton.click();
-    }
-
-    public void clearProjectField(){
-        String os = System.getProperty("os.name");
-        if (os.equals("Mac OS X")){
-           createPage.projectField.sendKeys(Keys.COMMAND + "a");
-        }else{
-            createPage.projectField.sendKeys(Keys.CONTROL + "a");
-        }
-        createPage.projectField.sendKeys(Keys.DELETE);
-    }
-
-    public void clearIssueType(){
-        String os = System.getProperty("os.name");
-        if (os.equals("Mac OS X")){
-            createPage.issueTypeSelector.sendKeys(Keys.COMMAND + "a");
-        }else{
-            createPage.issueTypeSelector.sendKeys(Keys.CONTROL + "a");
-        }
-        createPage.issueTypeSelector.sendKeys(Keys.DELETE);
-    }
 
     @BeforeEach
     public void setUp() {
@@ -61,8 +31,8 @@ public class CreatePageTest {
 
         browsePage = new BrowsePage(driver);
         createPage = new CreatePage(driver);
-
-        login();
+        driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
+        logIn(driver);
     }
 
     @AfterEach
@@ -285,6 +255,31 @@ public class CreatePageTest {
         Thread.sleep(300);
         String result = driver.findElement(createPage.resultPageContent).getText();
         Assertions.assertEquals(result, "No issues were found to match your search");
+    }
+
+    public void logout(){
+        browsePage.profileAvatarButton.click();
+        browsePage.logoutButton.click();
+    }
+
+    public void clearProjectField(){
+        String os = System.getProperty("os.name");
+        if (os.equals("Mac OS X")){
+            createPage.projectField.sendKeys(Keys.COMMAND + "a");
+        }else{
+            createPage.projectField.sendKeys(Keys.CONTROL + "a");
+        }
+        createPage.projectField.sendKeys(Keys.DELETE);
+    }
+
+    public void clearIssueType(){
+        String os = System.getProperty("os.name");
+        if (os.equals("Mac OS X")){
+            createPage.issueTypeSelector.sendKeys(Keys.COMMAND + "a");
+        }else{
+            createPage.issueTypeSelector.sendKeys(Keys.CONTROL + "a");
+        }
+        createPage.issueTypeSelector.sendKeys(Keys.DELETE);
     }
 
 }

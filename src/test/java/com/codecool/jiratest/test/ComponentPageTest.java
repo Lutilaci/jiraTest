@@ -18,18 +18,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static com.codecool.jiratest.utility.LogIn.logIn;
+
 public class ComponentPageTest {
 
     private WebDriver driver;
     private ComponentPage componentPage;
     private BrowsePage browsePage;
-
-    public void login() {
-        driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
-        browsePage.username.sendKeys("automation24");
-        browsePage.password.sendKeys("CCAutoTest19.");
-        browsePage.loginButton.click();
-    }
 
     public void logout() {
         browsePage.profileAvatarButton.click();
@@ -44,8 +39,8 @@ public class ComponentPageTest {
 
         componentPage = new ComponentPage(driver);
         browsePage = new BrowsePage(driver);
-
-        login();
+        driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
+        logIn(driver);
     }
 
     @AfterEach

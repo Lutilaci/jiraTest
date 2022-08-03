@@ -1,30 +1,17 @@
 package com.codecool.jiratest.test;
 
 import com.codecool.jiratest.page.BrowsePage;
-import com.codecool.jiratest.page.LoginPage;
 import org.junit.jupiter.api.*;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.openqa.selenium.By;
+import static com.codecool.jiratest.utility.LogIn.logIn;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class BrowsePageTest {
 
     private WebDriver driver;
     private BrowsePage browsePage;
 
-    public void login(){
-        driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
-        browsePage.username.sendKeys("automation23");
-        browsePage.password.sendKeys("CCAutoTest19.");
-        browsePage.loginButton.click();
-    }
 
     public void logout(){
         browsePage.profileAvatarButton.click();
@@ -36,10 +23,12 @@ public class BrowsePageTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-
         browsePage = new BrowsePage(driver);
+        driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
+        logIn(driver);
 
-        login();
+
+
     }
 
     @AfterEach

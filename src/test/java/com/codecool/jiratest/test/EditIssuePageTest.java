@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
+import static com.codecool.jiratest.utility.LogIn.logIn;
+
 public class EditIssuePageTest {
     private WebDriver driver;
     private EditIssuePage editIssue;
@@ -25,7 +27,7 @@ public class EditIssuePageTest {
         editIssue = new EditIssuePage(driver);
         loginPage = new LoginPage(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        logIn();
+        logIn(driver);
     }
 
     @AfterEach
@@ -83,10 +85,5 @@ public class EditIssuePageTest {
         Assertions.assertEquals("Happy Path",editIssue.summaryValue.getText());
     }
 
-    private void logIn(){
-        loginPage.usernameField.sendKeys("automation23");
-        loginPage.passwordField.sendKeys("CCAutoTest19.");
-        loginPage.logInButton.click();
-    }
 
 }

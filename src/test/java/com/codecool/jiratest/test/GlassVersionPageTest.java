@@ -17,6 +17,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
+import static com.codecool.jiratest.utility.LogIn.logIn;
+
 public class GlassVersionPageTest {
     private WebDriver driver;
     private GlassVersionPage glassVerPage;
@@ -42,7 +44,7 @@ public class GlassVersionPageTest {
     @Test
     public void IssueToVersion() throws InterruptedException {
         driver.get("https://jira-auto.codecool.metastage.net/browse/PP-124");
-        logIn();
+        logIn(driver);
         wait.until(ExpectedConditions.elementToBeClickable(
                 editIssuePage.editButton)).click();
         wait.until(ExpectedConditions.elementToBeClickable(
@@ -75,7 +77,7 @@ public class GlassVersionPageTest {
     @Test
     public void VersionIssueProgress() throws InterruptedException {
         driver.get("https://jira-auto.codecool.metastage.net/projects/PP?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=no-filter&contains=fefe");
-        logIn();
+        logIn(driver);
         Thread.sleep(500);
         wait.until(ExpectedConditions.elementToBeClickable(
                 driver.findElement(By.cssSelector("#versions-table > tbody.items.ui-sortable > tr > td.dynamic-table__actions > div > a > span")))).click();
@@ -97,10 +99,4 @@ public class GlassVersionPageTest {
         driver.findElement(By.linkText("Unrelease")).click();
     }
 
-
-    private void logIn(){
-        loginPage.usernameField.sendKeys("automation23");
-        loginPage.passwordField.sendKeys("CCAutoTest19.");
-        loginPage.logInButton.click();
-    }
 }
