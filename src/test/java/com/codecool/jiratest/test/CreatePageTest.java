@@ -59,6 +59,7 @@ public class CreatePageTest {
         driver.quit();
     }
 
+    // I can't create sub-task for COALA
     @Test
     public void createCOALASubTask() throws InterruptedException {
         driver.get("https://jira-auto.codecool.metastage.net/browse/COALA-126");
@@ -81,6 +82,7 @@ public class CreatePageTest {
         driver.findElement(createPage.finalSubTaskDeleteButton).click();
     }
 
+    // I can't make TOUCAN project so I don't have permission to create sub-task
     @Test
     public void createTOUCANSubTask() throws InterruptedException {
         driver.get("https://jira-auto.codecool.metastage.net/browse/TOUCAN-132");
@@ -219,6 +221,7 @@ public class CreatePageTest {
         Assertions.assertEquals(issueTypes, supposedToBe);
     }
 
+    // I don't have permission to create TOUCAN project
     @Test
     public void CreateIssueInTOUCANProjectWithIssueTypes() throws InterruptedException {
         List<String> supposedToBe = new ArrayList<>();

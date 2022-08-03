@@ -17,7 +17,7 @@ public class CreatePage {
     @FindBy (id ="issuetype-field")
     public WebElement issueTypeSelector;
 
-    @FindBy (id= "summary")
+    @FindBy (xpath= "//*[@id=\"summary\"]")
     public WebElement summaryField;
 
     @FindBy (css = "#create-issue-submit")
