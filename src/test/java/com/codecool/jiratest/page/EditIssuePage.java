@@ -37,6 +37,9 @@ public class EditIssuePage {
     @FindBy(css = ".item-delete")
     public WebElement fixVersionDelete;
 
+    @FindBy(id = "action_id_21")
+    public WebElement inProgressButton;
+
     public EditIssuePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }

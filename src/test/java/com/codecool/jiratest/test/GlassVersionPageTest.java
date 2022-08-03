@@ -31,7 +31,7 @@ public class GlassVersionPageTest {
         glassVerPage = new GlassVersionPage(driver);
         loginPage = new LoginPage(driver);
         editIssuePage = new EditIssuePage(driver);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(4));
     }
 
     @AfterEach
@@ -70,6 +70,31 @@ public class GlassVersionPageTest {
                 editIssuePage.fixVersionDelete)).click();
         editIssuePage.updateButton.click();
 
+    }
+
+    @Test
+    public void VersionIssueProgress() throws InterruptedException {
+        driver.get("https://jira-auto.codecool.metastage.net/projects/PP?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=no-filter&contains=fefe");
+        logIn();
+        Thread.sleep(500);
+        wait.until(ExpectedConditions.elementToBeClickable(
+                driver.findElement(By.cssSelector("#versions-table > tbody.items.ui-sortable > tr > td.dynamic-table__actions > div > a > span")))).click();
+        driver.findElement(By.linkText("Release")).click();
+        Thread.sleep(500);
+        wait.until(ExpectedConditions.elementToBeClickable(
+                driver.findElement(By.id("project-config-version-release-form-submit")))).click();
+        Thread.sleep(500);
+        driver.get("https://jira-auto.codecool.metastage.net/projects/PP?selectedItem=com.codecanvas.glass:glass");
+        wait.until(ExpectedConditions.elementToBeClickable(
+                driver.findElement(By.id("aui-uid-2"))
+        )).click();
+        Assertions.assertEquals("RELEASED",driver.findElement(By.cssSelector("#versions-table > tbody > tr:nth-child(2) > td.versions-table__status > div > span")).getText());
+
+        driver.get("https://jira-auto.codecool.metastage.net/projects/PP?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=no-filter&contains=fefe");
+        Thread.sleep(500);
+        wait.until(ExpectedConditions.elementToBeClickable(
+                driver.findElement(By.cssSelector("#versions-table > tbody.items.ui-sortable > tr > td.dynamic-table__actions > div > a > span")))).click();
+        driver.findElement(By.linkText("Unrelease")).click();
     }
 
 
