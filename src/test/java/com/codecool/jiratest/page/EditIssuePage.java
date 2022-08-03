@@ -23,13 +23,19 @@ public class EditIssuePage {
     public WebElement descriptionValue;
 
     @FindBy(id = "edit-issue-submit")
-    public WebElement editChangesButton;
+    public WebElement updateButton;
 
     @FindBy(css = ".aui-nav-selected:nth-child(2) > .aui-button")
     public WebElement switchTextMode;
 
     @FindBy(css = ".aui-button-link:nth-child(3)")
     public WebElement cancelChangesButton;
+
+    @FindBy(id = "fixVersions-textarea")
+    public WebElement fixVersionsField;
+
+    @FindBy(css = ".item-delete")
+    public WebElement fixVersionDelete;
 
     public EditIssuePage(WebDriver driver) {
         PageFactory.initElements(driver, this);

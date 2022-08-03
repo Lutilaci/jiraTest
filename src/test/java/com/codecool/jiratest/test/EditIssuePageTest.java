@@ -61,14 +61,14 @@ public class EditIssuePageTest {
                 editIssue.switchTextMode)).click();
         editIssue.descriptionField.clear();
         editIssue.descriptionField.sendKeys("new description");
-        editIssue.editChangesButton.click();
+        editIssue.updateButton.click();
         Thread.sleep(1000);
         Assertions.assertEquals("new description",editIssue.descriptionValue.getText());
         editIssue.editButton.click();
         wait.until(ExpectedConditions.elementToBeClickable(
                 editIssue.switchTextMode)).click();
         editIssue.descriptionField.clear();
-        editIssue.editChangesButton.click();
+        editIssue.updateButton.click();
     }
 
     @Test
