@@ -6,11 +6,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static com.codecool.jiratest.utility.LogIn.keyCode;
+
 public class LoginPageTest {
     private WebDriver driver;
     private LoginPage loginPage;
     private String username = "automation";
-    private String keyCode = "22";
+    private String kc = keyCode;
 
     @BeforeEach
     public void setUp() {
@@ -28,12 +30,12 @@ public class LoginPageTest {
     @Test
     public void LoginSuccessful(){
 
-        loginPage.usernameField.sendKeys(username+keyCode);
+        loginPage.usernameField.sendKeys(username+kc);
         loginPage.passwordField.sendKeys("CCAutoTest19.");
         loginPage.logInButton.click();
         loginPage.profilePicture.click();
         loginPage.profileButton.click();
-        Assertions.assertEquals("Auto Tester "+keyCode, loginPage.profileName.getText());
+        Assertions.assertEquals("Auto Tester "+kc, loginPage.profileName.getText());
     }
 
     @Test
@@ -49,7 +51,7 @@ public class LoginPageTest {
     @Test
     public void LogInWrongPassword(){
 
-        loginPage.usernameField.sendKeys(username+keyCode);
+        loginPage.usernameField.sendKeys(username+kc);
         loginPage.passwordField.sendKeys("wrongPW");
         loginPage.logInButton.click();
         ValidateWrongLogin();
@@ -59,7 +61,7 @@ public class LoginPageTest {
     @Test
     public void EmptyPassword(){
 
-        loginPage.usernameField.sendKeys(username+keyCode);
+        loginPage.usernameField.sendKeys(username+kc);
         loginPage.logInButton.click();
         ValidateWrongLogin();
         RestoreLogin();
@@ -78,7 +80,7 @@ public class LoginPageTest {
     }
 
     private void RestoreLogin(){
-        loginPage.usernameField.sendKeys(username+keyCode);
+        loginPage.usernameField.sendKeys(username+kc);
         loginPage.passwordField.sendKeys("CCAutoTest19.");
         loginPage.logInButton.click();
     }

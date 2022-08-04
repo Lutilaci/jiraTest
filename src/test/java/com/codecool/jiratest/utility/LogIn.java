@@ -9,9 +9,10 @@ import java.sql.Driver;
 
 
 public class LogIn {
+    public static String keyCode = "22";
+
     public static void logIn(WebDriver driver){
         final String username = "automation";
-        final String keyCode = "22";
         final String password = "CCAutoTest19.";
 
         driver.findElement(By.id("login-form-username")).sendKeys(username+keyCode);

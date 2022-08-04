@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 
 import java.io.IOException;
 
+import static com.codecool.jiratest.utility.LogIn.keyCode;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LogOutTest {
@@ -43,9 +44,9 @@ public class LogOutTest {
     }
 
     @Test
-    void SuccessfulLogOut() throws InterruptedException, IOException {
+    void SuccessfulLogOut(){
         //Login:
-        p.userName.sendKeys("automation22");
+        p.userName.sendKeys("automation"+keyCode);
         p.password.sendKeys("CCAutoTest19.");
         p.logInButton.click();
         p.driver.findElement(By.xpath("//img[@alt='User profile for Auto Tester 22']")).click();
