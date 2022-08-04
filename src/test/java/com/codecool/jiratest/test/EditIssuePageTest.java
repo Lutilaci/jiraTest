@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -33,7 +34,7 @@ public class EditIssuePageTest {
 
     @AfterEach
     public void tearDown(){
-        driver.quit();
+//        driver.quit();
     }
 
     @Test
@@ -44,9 +45,10 @@ public class EditIssuePageTest {
         wait.until(ExpectedConditions.elementToBeClickable(
                 editIssue.summaryField)).clear();
         editIssue.summaryField.sendKeys("Happy Path Edit");
-        editIssue.summaryField.submit();
-        Thread.sleep(1000);
+        editIssue.updateButton.click();
 
+        Thread.sleep(500);
+        wait.until(ExpectedConditions.visibilityOf(editIssue.summaryValue));
         Assertions.assertEquals("Happy Path Edit",editIssue.summaryValue.getText());
 
         editIssue.editButton.click();
@@ -63,10 +65,11 @@ public class EditIssuePageTest {
         wait.until(ExpectedConditions.elementToBeClickable(
                 editIssue.switchTextMode)).click();
         editIssue.descriptionField.clear();
-        Thread.sleep(1000);
-        editIssue.descriptionField.sendKeys("new description");
+        wait.until(ExpectedConditions.elementToBeClickable(
+                editIssue.descriptionField)).sendKeys("new description");
         editIssue.updateButton.click();
-        Thread.sleep(1000);
+        driver.navigate().refresh();
+        wait.until(ExpectedConditions.visibilityOf(editIssue.descriptionValue));
         Assertions.assertEquals("new description",editIssue.descriptionValue.getText());
         editIssue.editButton.click();
         wait.until(ExpectedConditions.elementToBeClickable(

@@ -7,18 +7,25 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.io.IOException;
+import java.time.Duration;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class PermissionsWithGlass {
     private static CaptchaPage c;
+    private WebDriverWait wait;
 
     @BeforeEach
     public void setUp() throws IOException {
         c = new CaptchaPage();
         c.driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
         c.driver.manage().window().maximize();
+        wait = new WebDriverWait(c.driver, Duration.ofSeconds(5));
         LogIn.logIn(c.driver);
     }
 
@@ -76,8 +83,8 @@ public class PermissionsWithGlass {
         c.driver.get("https://jira-auto.codecool.metastage.net/plugins/servlet/project-config/PP/permissions");
 
         assertEquals(c.driver.findElements(By.cssSelector(".permissions-group:nth-child(1) tr:nth-child(2) dd")).get(0).getText().contains("Any logged in user"), true);
-        Thread.sleep(1000);
-        c.driver.findElement(By.xpath("//span[contains(.,'Glass Documentation')]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(
+                c.driver.findElement(By.xpath("//span[contains(.,'Glass Documentation')]")))).click();
         c.driver.findElement(By.xpath("//a[contains(text(),'Permissions')]")).click();
 
         assertEquals(c.driver.findElements(By.cssSelector("#glass-permissions-matrix-panel .permtr:nth-child(5) > .td-icon:nth-child(3) > .glass-true-icon")).isEmpty(), false);

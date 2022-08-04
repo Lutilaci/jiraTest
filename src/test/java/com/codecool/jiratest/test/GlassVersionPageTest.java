@@ -51,7 +51,6 @@ public class GlassVersionPageTest {
                 editIssuePage.fixVersionsField)).sendKeys("fefe");
         editIssuePage.updateButton.click();
 
-        Thread.sleep(1000);
         driver.get("https://jira-auto.codecool.metastage.net/projects/PP/versions/10594");
 
         List<WebElement> elements = glassVerPage.table.findElements(By.cssSelector(".issue-summary"));
@@ -75,15 +74,18 @@ public class GlassVersionPageTest {
 
     @Test
     public void VersionIssueProgress() throws InterruptedException {
-        driver.get("https://jira-auto.codecool.metastage.net/projects/PP?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=no-filter&contains=fefe");
+        driver.get("https://jira-auto.codecool.metastage.net/projects/PP/versions/10594");
         logIn(driver);
-        Thread.sleep(500);
+
         wait.until(ExpectedConditions.elementToBeClickable(
-                driver.findElement(By.cssSelector("#versions-table > tbody.items.ui-sortable > tr > td.dynamic-table__actions > div > a > span")))).click();
-        driver.findElement(By.linkText("Release")).click();
-        Thread.sleep(500);
+                driver.findElement(By.id("runRelease")))).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.className("jira-dialog")));
+
         wait.until(ExpectedConditions.elementToBeClickable(
-                driver.findElement(By.id("project-config-version-release-form-submit")))).click();
+                driver.findElement(By.id("release")))).click();
+
         Thread.sleep(500);
         driver.get("https://jira-auto.codecool.metastage.net/projects/PP?selectedItem=com.codecanvas.glass:glass");
         wait.until(ExpectedConditions.elementToBeClickable(
@@ -93,8 +95,14 @@ public class GlassVersionPageTest {
 
         driver.get("https://jira-auto.codecool.metastage.net/projects/PP?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=no-filter&contains=fefe");
         Thread.sleep(500);
+
         wait.until(ExpectedConditions.elementToBeClickable(
-                driver.findElement(By.cssSelector("#versions-table > tbody.items.ui-sortable > tr > td.dynamic-table__actions > div > a > span")))).click();
+                driver.findElement(By.cssSelector("#versions-table > tbody.items.ui-sortable > tr > td.dynamic-table__actions > div > a")))).click();
+
+//        WebElement ul = driver.findElement(By.cssSelector("#version-actions-10594 > ul"));
+//        List<WebElement> list = ul.findElements(By.cssSelector("li"));
+//        list.get(0).click();
+
         driver.findElement(By.linkText("Unrelease")).click();
     }
 }
