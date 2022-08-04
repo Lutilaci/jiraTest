@@ -12,6 +12,8 @@ target/
 *.iml
 *.ipr
 
+!**/src/test/java/com/codecool/jiratest/utility/LogIn.java
+
 ### Eclipse ###
 .apt_generated
 .classpath
