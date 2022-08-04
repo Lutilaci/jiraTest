@@ -1,4 +1,4 @@
-package com.codecool.jiratest.test;
+package com.codecool.jiratest.CaptchaTest;
 
 import com.codecool.jiratest.page.CaptchaPage;
 import org.junit.jupiter.api.*;
