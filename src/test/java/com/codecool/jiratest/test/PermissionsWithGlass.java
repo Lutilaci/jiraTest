@@ -1,6 +1,7 @@
 package com.codecool.jiratest.test;
 
 import com.codecool.jiratest.page.CaptchaPage;
+import com.codecool.jiratest.utility.LogIn;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,9 +16,7 @@ public class PermissionsWithGlass {
 
     public void login(){
         c.driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
-        c.driver.findElement(By.id("login-form-username")).sendKeys("automation24");
-        c.driver.findElement(By.id("login-form-password")).sendKeys("CCAutoTest19.");
-        c.driver.findElement(By.id("login-form-submit")).click();
+        LogIn.logIn(c.driver);
     }
 
     @BeforeEach
