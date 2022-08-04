@@ -68,7 +68,8 @@ public class EditIssuePageTest {
         wait.until(ExpectedConditions.elementToBeClickable(
                 editIssue.descriptionField)).sendKeys("new description");
         editIssue.updateButton.click();
-        driver.navigate().refresh();
+        Thread.sleep(500);
+        // tul gyorsan nezi meg az assertiont es nem latja az uj descriptiont
         wait.until(ExpectedConditions.visibilityOf(editIssue.descriptionValue));
         Assertions.assertEquals("new description",editIssue.descriptionValue.getText());
         editIssue.editButton.click();
