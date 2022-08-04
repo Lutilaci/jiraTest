@@ -1,17 +1,12 @@
 package com.codecool.jiratest.test;
 
-import com.codecool.jiratest.page.BrowsePage;
 import com.codecool.jiratest.page.CaptchaPage;
-import com.codecool.jiratest.page.LoginPage;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
 import java.io.IOException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -87,10 +82,10 @@ public class PermissionsWithGlass {
         c.driver.get("https://jira-auto.codecool.metastage.net/plugins/servlet/project-config/PP/permissions");
 
         assertEquals(c.driver.findElements(By.cssSelector(".permissions-group:nth-child(1) tr:nth-child(2) dd")).get(0).getText().contains("Any logged in user"), true);
+        Thread.sleep(500);
         c.driver.findElement(By.xpath("//span[contains(.,'Glass Documentation')]")).click();
         c.driver.findElement(By.xpath("//a[contains(text(),'Permissions')]")).click();
 
         assertEquals(c.driver.findElements(By.cssSelector("#glass-permissions-matrix-panel .permtr:nth-child(5) > .td-icon:nth-child(3) > .glass-true-icon")).isEmpty(), false);
-        //assertEquals(c.driver.findElements(By.cssSelector("#glass-permissions-matrix-panel .permtr:nth-child(2) > .td-icon:nth-child(3) > .glass-true-icon")).isEmpty(), false);
     }
 }

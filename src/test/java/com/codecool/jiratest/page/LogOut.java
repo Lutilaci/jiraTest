@@ -1,4 +1,4 @@
-package LogOut;
+package com.codecool.jiratest.page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,11 +10,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.io.IOException;
 
 public class LogOut {
-    WebDriver driver;
+    public WebDriver driver;
     public static ChromeDriverService service;
-    WebElement userName;
-    WebElement password;
-    WebElement logInButton;
+    public WebElement userName;
+    public WebElement password;
+    public WebElement logInButton;
 
     public LogOut() throws IOException {
 

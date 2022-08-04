@@ -1,8 +1,10 @@
-package LogOut;
+package com.codecool.jiratest.test;
 
+import com.codecool.jiratest.page.LogOut;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 
 
@@ -13,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class LogOutTest {
     private static ChromeDriverService service;
     private WebDriver driver;
-    LogOut p;
+    private LogOut p;
 
     @BeforeAll
         public static void CreateAndStartService() throws IOException {
@@ -21,18 +23,18 @@ public class LogOutTest {
                     .usingAnyFreePort()
                     .build();
             service.start();
-
         }
 
-        @BeforeEach
-        public void createDriver() throws IOException {
-            p = new LogOut();
-        }
+    @BeforeEach
+    public void createDriver() throws IOException {
+    driver = new ChromeDriver();
+    p = new LogOut();
+    }
 
     @AfterEach
     public void quitDriver() {
-        p.driver.close();
-        p.driver.quit();
+        driver.close();
+        driver.quit();
 
     }
     @AfterAll
@@ -48,16 +50,8 @@ public class LogOutTest {
         p.logInButton.click();
         p.driver.findElement(By.xpath("//img[@alt='User profile for Auto Tester 22']")).click();
         p.driver.findElement(By.id("log_out")).click();
-
-//        assertThat(p.driver.findElement(By.xpath("//a[contains(text(),'Log In')]")).isDisplayed()).isTrue();
-
         p.driver.get("https://jira-auto.codecool.metastage.net/secure/ViewProfile.jspa");
-//        assertThat(p.driver.findElement(By.xpath("//p[contains(.,'You must log in to access this page.')]")).isDisplayed()).isTrue();
 
-        assertTrue(p.driver.findElements(By.xpath("//span[contains(.,'Auto Tester 22')]")).isEmpty());
-
+        assertTrue(driver.findElements(By.xpath("//span[contains(.,'Auto Tester 22')]")).isEmpty());
     }
-    }
-
-
-
+}
