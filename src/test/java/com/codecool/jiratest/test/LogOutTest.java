@@ -49,10 +49,10 @@ public class LogOutTest {
         p.userName.sendKeys("automation"+keyCode);
         p.password.sendKeys("CCAutoTest19.");
         p.logInButton.click();
-        p.driver.findElement(By.xpath("//img[@alt='User profile for Auto Tester 22']")).click();
+        p.driver.findElement(By.id("header-details-user-fullname")).click();
         p.driver.findElement(By.id("log_out")).click();
         p.driver.get("https://jira-auto.codecool.metastage.net/secure/ViewProfile.jspa");
 
-        assertTrue(driver.findElements(By.xpath("//span[contains(.,'Auto Tester 22')]")).isEmpty());
+        Assertions.assertEquals("Log In", p.driver.findElement(By.linkText("Log In")).getText());
     }
 }
