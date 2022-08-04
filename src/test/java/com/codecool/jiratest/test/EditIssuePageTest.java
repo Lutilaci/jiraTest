@@ -23,6 +23,7 @@ public class EditIssuePageTest {
     @BeforeEach
     public void setUp(){
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("https://jira-auto.codecool.metastage.net/projects/MTP/issues/MTP-2020?filter=allopenissues");
         editIssue = new EditIssuePage(driver);
         loginPage = new LoginPage(driver);

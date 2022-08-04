@@ -29,6 +29,7 @@ public class GlassVersionPageTest {
     @BeforeEach
     public void setUp(){
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         glassVerPage = new GlassVersionPage(driver);
         loginPage = new LoginPage(driver);
         editIssuePage = new EditIssuePage(driver);
