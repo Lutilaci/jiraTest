@@ -34,13 +34,13 @@ public class LogOutTest {
 
     @AfterEach
     public void quitDriver() {
-        driver.close();
+        p.driver.quit();
         driver.quit();
 
     }
     @AfterAll
     public static void stopService() {
-        service.stop();
+//        service.stop();
     }
 
     @Test

@@ -9,7 +9,7 @@ import java.sql.Driver;
 
 
 public class LogIn {
-    public static String keyCode = "24";
+    public static String keyCode = "23";
 
     public static void logIn(WebDriver driver){
         final String username = "automation";

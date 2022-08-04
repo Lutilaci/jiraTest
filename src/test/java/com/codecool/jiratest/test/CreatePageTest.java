@@ -227,7 +227,7 @@ public class CreatePageTest {
         }
 
         driver.findElement(createPage.cancelButton).click();
-        Assertions.assertEquals(issueTypes, supposedToBe);
+        Assertions.assertEquals(supposedToBe, issueTypes);
     }
 
     @Test

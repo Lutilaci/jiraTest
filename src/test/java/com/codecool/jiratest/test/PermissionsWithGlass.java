@@ -76,7 +76,7 @@ public class PermissionsWithGlass {
         c.driver.get("https://jira-auto.codecool.metastage.net/plugins/servlet/project-config/PP/permissions");
 
         assertEquals(c.driver.findElements(By.cssSelector(".permissions-group:nth-child(1) tr:nth-child(2) dd")).get(0).getText().contains("Any logged in user"), true);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         c.driver.findElement(By.xpath("//span[contains(.,'Glass Documentation')]")).click();
         c.driver.findElement(By.xpath("//a[contains(text(),'Permissions')]")).click();
 
