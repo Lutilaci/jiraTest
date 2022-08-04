@@ -14,17 +14,12 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 public class PermissionsWithGlass {
     private static CaptchaPage c;
 
-    public void login(){
-        c.driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
-        LogIn.logIn(c.driver);
-    }
-
     @BeforeEach
     public void setUp() throws IOException {
         c = new CaptchaPage();
         c.driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
         c.driver.manage().window().maximize();
-        login();
+        LogIn.logIn(c.driver);
     }
 
     @AfterEach

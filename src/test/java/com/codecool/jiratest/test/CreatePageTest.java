@@ -68,7 +68,7 @@ public class CreatePageTest {
     public void createTOUCANSubTask() throws InterruptedException {
         driver.get("https://jira-auto.codecool.metastage.net/browse/TOUCAN-132");
         String header = createPage.issueHeader.getText();
-        Assertions.assertEquals(header,"TOUCAN Happy Path");
+        Assertions.assertEquals(header,"Create sub-task");
         driver.findElement(createPage.moreButton).click();
         createPage.createSubClass.click();
         createPage.summaryField.sendKeys("Sub-task test");
