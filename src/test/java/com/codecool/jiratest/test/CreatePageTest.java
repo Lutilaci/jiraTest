@@ -8,6 +8,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -22,15 +24,18 @@ public class CreatePageTest {
     private WebDriver driver;
     private CreatePage createPage;
     private BrowsePage browsePage;
+    private WebDriverWait wait;
 
     @BeforeEach
     public void setUp() {
         driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
         browsePage = new BrowsePage(driver);
         createPage = new CreatePage(driver);
+
         driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
         logIn(driver);
     }
@@ -125,8 +130,8 @@ public class CreatePageTest {
         createPage.createIssueButton.click();
         createPage.popupMessage.isDisplayed();
 
-        Thread.sleep(500);
-        driver.findElement(By.partialLinkText("Happy Path")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(
+                driver.findElement(By.partialLinkText("Happy Path")))).click();
         String issueName = createPage.issueHeader.getText();
         Assertions.assertEquals("Happy Path", issueName);
 

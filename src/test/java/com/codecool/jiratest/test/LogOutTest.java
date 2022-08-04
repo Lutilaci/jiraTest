@@ -38,11 +38,11 @@ public class LogOutTest {
         driver.quit();
 
     }
-    @AfterAll
-    public static void stopService() {
+//    @AfterAll
+//    public static void stopService() {
 //        service.stop();
-    }
-
+//    }
+//
     @Test
     void SuccessfulLogOut(){
         //Login:

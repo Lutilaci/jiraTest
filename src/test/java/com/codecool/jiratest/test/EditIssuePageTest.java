@@ -63,6 +63,7 @@ public class EditIssuePageTest {
         wait.until(ExpectedConditions.elementToBeClickable(
                 editIssue.switchTextMode)).click();
         editIssue.descriptionField.clear();
+        Thread.sleep(1000);
         editIssue.descriptionField.sendKeys("new description");
         editIssue.updateButton.click();
         Thread.sleep(1000);
