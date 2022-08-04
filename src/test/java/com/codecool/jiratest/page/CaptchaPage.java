@@ -2,6 +2,7 @@ package com.codecool.jiratest.page;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -22,11 +23,11 @@ public static ChromeDriverService service;
 
 
     public CaptchaPage() throws IOException {
-        service= new ChromeDriverService.Builder()
-                .usingAnyFreePort()
-                .build();
-        service.start();
-        driver = new RemoteWebDriver(service.getUrl(), new ChromeOptions());
-
+//        service= new ChromeDriverService.Builder()
+//                .usingAnyFreePort()
+//                .build();
+//        service.start();
+//        driver = new RemoteWebDriver(service.getUrl(), new ChromeOptions());
+driver = new ChromeDriver();
     }
 }

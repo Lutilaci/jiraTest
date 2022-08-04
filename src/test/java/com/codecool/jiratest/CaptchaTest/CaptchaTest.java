@@ -29,10 +29,10 @@ public class CaptchaTest {
         c.driver.quit();
     }
 
-    @AfterAll
-    public static void stopService() {
-        c.service.stop();
-    }
+//    @AfterAll
+//    public static void stopService() {
+//        c.service.stop();
+//    }
 
 
     @Test

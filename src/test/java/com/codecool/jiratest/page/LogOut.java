@@ -3,6 +3,7 @@ package com.codecool.jiratest.page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -18,11 +19,11 @@ public class LogOut {
 
     public LogOut() throws IOException {
 
-        service= new ChromeDriverService.Builder()
-                .usingAnyFreePort()
-                .build();
-        service.start();
-        driver = new RemoteWebDriver(service.getUrl(), new ChromeOptions());
+//        service= new ChromeDriverService.Builder()
+//                .usingAnyFreePort()
+//                .build();
+//        service.start();
+        driver = new ChromeDriver();
 
         driver.manage().window().maximize();
         driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
