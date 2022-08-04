@@ -8,9 +8,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -22,13 +25,14 @@ public class CreatePageTest {
     private WebDriver driver;
     private CreatePage createPage;
     private BrowsePage browsePage;
+    private WebDriverWait wait;
 
     @BeforeEach
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         browsePage = new BrowsePage(driver);
         createPage = new CreatePage(driver);
         driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
@@ -42,7 +46,7 @@ public class CreatePageTest {
 
     // I can't create sub-task for COALA
     @Test
-    public void createCOALASubTask() throws InterruptedException {
+    public void createCOALASubTask() {
         driver.get("https://jira-auto.codecool.metastage.net/browse/COALA-126");
         String header = createPage.issueHeader.getText();
         Assertions.assertEquals(header,"Create sub-task");
@@ -63,9 +67,8 @@ public class CreatePageTest {
         driver.findElement(createPage.finalSubTaskDeleteButton).click();
     }
 
-    // I can't make TOUCAN project so I don't have permission to create sub-task
     @Test
-    public void createTOUCANSubTask() throws InterruptedException {
+    public void createTOUCANSubTask() {
         driver.get("https://jira-auto.codecool.metastage.net/browse/TOUCAN-132");
         String header = createPage.issueHeader.getText();
         Assertions.assertEquals(header,"Create sub-task");
@@ -109,24 +112,23 @@ public class CreatePageTest {
     }
 
     @Test
-    public void createNewIssue() throws InterruptedException {
+    public void createNewIssue() {
         createPage.mainCreateButton.click();
         clearProjectField();
         createPage.projectField.sendKeys("MTP");
         createPage.projectField.sendKeys(Keys.RETURN);
-        Thread.sleep(300);
-
         clearIssueType();
         createPage.issueTypeSelector.sendKeys("Bug");
-        Thread.sleep(300);
-        createPage.issueTypeSelector.sendKeys(Keys.RETURN);
-        Thread.sleep(300);
-        createPage.summaryField.sendKeys("Happy Path");
-        createPage.createIssueButton.click();
-        createPage.popupMessage.isDisplayed();
 
-        Thread.sleep(500);
-        driver.findElement(By.partialLinkText("Happy Path")).click();
+        createPage.issueTypeSelector.sendKeys(Keys.RETURN);
+        wait.until(ExpectedConditions.elementToBeClickable(
+                createPage.summaryField)).sendKeys("Happy Path");
+        wait.until(ExpectedConditions.elementToBeClickable(
+                        createPage.createIssueButton
+        )).click();
+        createPage.popupMessage.isDisplayed();
+        wait.until(ExpectedConditions.elementToBeClickable(
+                        driver.findElement(By.partialLinkText("Happy Path")))).click();
         String issueName = createPage.issueHeader.getText();
         Assertions.assertEquals("Happy Path", issueName);
 
@@ -143,12 +145,11 @@ public class CreatePageTest {
         String errorMessage = driver.findElement(createPage.createIssueErrorMessage).getText();
         Assertions.assertEquals(errorMessage, "You must specify a summary of the issue.");
         driver.findElement(createPage.cancelButton).click();
-        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         driver.switchTo().alert().accept();
     }
 
     @Test
-    public void CreateIssueInCOALAProjectWithIssueTypes() throws InterruptedException {
+    public void CreateIssueInCOALAProjectWithIssueTypes() {
         List<String> supposedToBe = new ArrayList<>();
         supposedToBe.add("Bug");
         supposedToBe.add("Story");
@@ -159,8 +160,8 @@ public class CreatePageTest {
         createPage.projectField.sendKeys("COALA");
         createPage.projectField.sendKeys(Keys.RETURN);
 
-        Thread.sleep(300);
-        createPage.issueTypeSelector.click();
+        wait.until(ExpectedConditions.elementToBeClickable(
+                        createPage.issueTypeSelector)).click();
         issueTypes.add(createPage.issueTypeSelector.getAttribute("value"));
 
         WebElement ul_Element = driver.findElement(createPage.issueScrollDown);
@@ -171,11 +172,12 @@ public class CreatePageTest {
         }
 
         driver.findElement(createPage.cancelButton).click();
-        Assertions.assertEquals(issueTypes, supposedToBe);
+        Collections.sort(issueTypes);
+        Assertions.assertEquals(supposedToBe, issueTypes);
     }
 
     @Test
-    public void CreateIssueInJETIProjectWithIssueTypes() throws InterruptedException {
+    public void CreateIssueInJETIProjectWithIssueTypes() {
         List<String> supposedToBe = new ArrayList<>();
         supposedToBe.add("Bug");
         supposedToBe.add("Story");
@@ -186,8 +188,8 @@ public class CreatePageTest {
         createPage.projectField.sendKeys("JETI");
         createPage.projectField.sendKeys(Keys.RETURN);
 
-        Thread.sleep(300);
-        createPage.issueTypeSelector.click();
+        wait.until(ExpectedConditions.elementToBeClickable(
+                        createPage.issueTypeSelector)).click();
         issueTypes.add(createPage.issueTypeSelector.getAttribute("value"));
 
         WebElement ul_Element = driver.findElement(createPage.issueScrollDown);
@@ -198,12 +200,13 @@ public class CreatePageTest {
         }
 
         driver.findElement(createPage.cancelButton).click();
-        Assertions.assertEquals(supposedToBe, issueTypes);
+        Collections.sort(issueTypes);
+        Assertions.assertEquals(issueTypes, supposedToBe);
     }
 
     // I don't have permission to create TOUCAN project
     @Test
-    public void CreateIssueInTOUCANProjectWithIssueTypes() throws InterruptedException {
+    public void CreateIssueInTOUCANProjectWithIssueTypes() {
         List<String> supposedToBe = new ArrayList<>();
         supposedToBe.add("Bug");
         supposedToBe.add("Story");
@@ -215,8 +218,9 @@ public class CreatePageTest {
         createPage.projectField.sendKeys("TOUCAN");
         createPage.projectField.sendKeys(Keys.RETURN);
 
-        Thread.sleep(300);
-        createPage.issueTypeSelector.click();
+        wait.until(ExpectedConditions.elementToBeClickable(
+                createPage.issueTypeSelector)).click();
+
         issueTypes.add(createPage.issueTypeSelector.getAttribute("value"));
 
         WebElement ul_Element = driver.findElement(createPage.issueScrollDown);
@@ -227,32 +231,32 @@ public class CreatePageTest {
         }
 
         driver.findElement(createPage.cancelButton).click();
-        Assertions.assertEquals(supposedToBe, issueTypes);
+        Collections.sort(issueTypes);
+        Assertions.assertEquals(issueTypes,supposedToBe);
     }
 
     @Test
-    public void CancelIssueAfterFill() throws InterruptedException {
+    public void CancelIssueAfterFill() {
         createPage.mainCreateButton.click();
         clearProjectField();
         createPage.projectField.sendKeys("MTP");
         createPage.projectField.sendKeys(Keys.RETURN);
-        Thread.sleep(300);
 
         clearIssueType();
         createPage.issueTypeSelector.sendKeys("Bug");
-        Thread.sleep(300);
-        createPage.issueTypeSelector.sendKeys(Keys.RETURN);
-        Thread.sleep(300);
-        createPage.summaryField.sendKeys("Issue Cancel Test");
+        wait.until(ExpectedConditions.elementToBeClickable(
+            createPage.issueTypeSelector)).sendKeys(Keys.RETURN);
+        wait.until(ExpectedConditions.elementToBeClickable(
+            createPage.summaryField)).sendKeys("Issue Cancel Test");
         driver.findElement(createPage.cancelButton).click();
-        Thread.sleep(300);
+        wait.until(ExpectedConditions.alertIsPresent());
         driver.switchTo().alert().accept();
-        Thread.sleep(300);
-        createPage.issuesButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(
+            createPage.issuesButton)).click();
         driver.findElement(createPage.searchForIssuesButton).click();
         driver.findElement(createPage.searchForIssueField).sendKeys("Issue Cancel Test");
         driver.findElement(createPage.searchButton).click();
-        Thread.sleep(300);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(createPage.resultPageContent)));
         String result = driver.findElement(createPage.resultPageContent).getText();
         Assertions.assertEquals(result, "No issues were found to match your search");
     }
@@ -274,6 +278,7 @@ public class CreatePageTest {
 
     public void clearIssueType(){
         String os = System.getProperty("os.name");
+        wait.until(ExpectedConditions.elementToBeClickable(createPage.issueTypeSelector));
         if (os.equals("Mac OS X")){
             createPage.issueTypeSelector.sendKeys(Keys.COMMAND + "a");
         }else{
