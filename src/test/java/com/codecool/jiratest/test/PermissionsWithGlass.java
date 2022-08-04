@@ -16,8 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class PermissionsWithGlass {
-    private BrowsePage browsePage;
-    WebDriver driver;
     private static CaptchaPage c;
 
     public void login(){

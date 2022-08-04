@@ -24,9 +24,6 @@ public class CaptchaTest {
     public void login() throws IOException {
         c = new CaptchaPage();
         c.driver.get("https://jira-auto.codecool.metastage.net/login.jsp");
-        //c.username.sendKeys("automation22");
-        //c.password.sendKeys("CCAutoTest19.");
-        //c.loginButton.click();
         c.driver.manage().window().maximize();
     }
 
