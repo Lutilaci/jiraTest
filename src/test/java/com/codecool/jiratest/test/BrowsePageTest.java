@@ -73,7 +73,7 @@ public class BrowsePageTest {
     public void browseIssues(){
         driver.get("https://jira-auto.codecool.metastage.net/projects/MTP/issues/MTP-2020?filter=allopenissues");
         String openIssues = driver.findElement(browsePage.subnavigatorTitle).getText();
-        Assertions.assertEquals(openIssues, "Open issues");
+        Assertions.assertEquals(openIssues, "All issues");
         String header = driver.findElement(browsePage.browseIssueHeader).getText();
         System.out.println(header);
         Assertions.assertEquals(header, "Happy Path");
